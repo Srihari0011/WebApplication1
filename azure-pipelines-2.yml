@@ -73,7 +73,7 @@ jobs:
   dependsOn: Job_1
   condition: succeeded()
   pool:
-    name: 'Neotechagentpool'  # Ensure this is the correct pool with your self-hosted agent
+    name: 'SPool'  # Ensure this is the correct pool with your self-hosted agent
   steps:
     # Step 1: Download build artifacts
     - task: DownloadBuildArtifacts@0
@@ -81,7 +81,7 @@ jobs:
       inputs:
         buildType: 'specific'
         project: $(System.TeamProject)
-        definition: '33'  # $(Build.DefinitionId)
+        definition: '13'  # $(Build.DefinitionId)
         buildVersionToDownload: 'latest'
         downloadType: 'single'
         artifactName: 'drop'
